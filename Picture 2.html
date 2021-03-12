@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Picture Puzzle</title>
+		<style></style>
+		<link rel = "stylesheet" href = "Level 4 Design.css"; />
+		<script src = "Level 4 Functions.js"></script>	
+		<script>
+			function initialize()
+			{
+				img1 = document.getElementById("piece1");
+				img2 = document.getElementById("piece2");
+				img3 = document.getElementById("piece3");
+				img4 = document.getElementById("piece4");
+				img5 = document.getElementById("piece5");
+				img6 = document.getElementById("piece6");
+				img7 = document.getElementById("piece7");
+				img8 = document.getElementById("piece8");
+				img9 = document.getElementById("piece9");
+				img10 = document.getElementById("piece10");
+				img11 = document.getElementById("piece11");
+				img12 = document.getElementById("piece12");
+				img13 = document.getElementById("piece13");
+				img14 = document.getElementById("piece14");
+				img15 = document.getElementById("piece15");
+				img16 = document.getElementById("piece16");
+				clickOut = document.getElementById("clickScore");
+				displayCorrect = document.getElementById("correctAmount"); 
+				endmsg = document.getElementById("congragulations");
+				correctIMGcount = 0;
+				timesClicked = 0;
+				scoreMSG = ("Score: " + timesClicked);
+				NumberCorrect = ("Number Correct: " + correctIMGcount);
+				source1 = "";
+				source2 = "";
+				image1Num = "";
+				image2Num = "";
+				filler = "";
+				gameEnd = false;
+				
+				imgsChosen = 0;
+				imgArray = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16]; 
+				for(var i=0; i < 16; i++)
+				{
+					imgArray[i].src = "Picture2/image" + (i+1) + ".jpg";
+				}
+				for(var i=0; i < 16; i++)
+				{
+					imgArray[i].OGsrc = "file:///C:/Users/bryan/Documents/Online%20School%20docs/Picture%20Puzzle%20Level%204%20Project/Picture2/image" + (i+1) + ".jpg";
+				}
+				display();
+				gameStart = false
+			}
+			function shuffle()
+			{	
+				gameEnd = false
+				randomIMGs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
+				for(var i= 0; i < 16; i++)
+				{	
+					var IMGnumberSelected =  Math.floor(Math.random()*(randomIMGs.length - 1)); //Math.floor(Math.random()*(randomIMGs.length - 1)) or getRandomInteger(1, randomIMGs.length)
+					imgArray[i].random = "Picture2/image" + randomIMGs[IMGnumberSelected] + ".jpg";
+					randomIMGs.splice(IMGnumberSelected, 1);
+				}
+				for(var i= 0; i < 16; i++)
+				{
+					imgArray[i].src = imgArray[i].random
+				}
+				timesClicked = 0;
+				correctIMGcount = 0;
+				display();
+				gameStart = true 
+				image1Num.style.border = "none";
+			}
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<h1> Picture Puzzle </h1>
+		<h2> To solve this puzzle, you will to have to return each individual piece to its correct position and reveal the original and much larger image. 
+			There are 16 pieces of the image that are scattered around and you have to choose which ones to swap by clicking on them. Use your best intuition and good luck!</h2>
+		<h3 id = "congragulations"></h3>
+		<h3 id = "clickScore"></h3>
+		<h3 id = "correctAmount"></h3>	
+		</br>
+		<button onclick = "shuffle();"> Shuffle </button> 
+		<button onclick = "restart();"> Restart </button>
+		</br>
+		
+		<div>
+			<img id = "piece1" onclick = "chooseTwo(img1);"/>
+			<img id = "piece2" onclick = "chooseTwo(img2);"/>
+			<img id = "piece3" onclick = "chooseTwo(img3);"/>
+			<img id = "piece4" onclick = "chooseTwo(img4);"/>
+		</div>
+		<div>
+			<img id = "piece5" onclick = "chooseTwo(img5);"/>
+			<img id = "piece6" onclick = "chooseTwo(img6);"/>
+			<img id = "piece7" onclick = "chooseTwo(img7);"/>
+			<img id = "piece8" onclick = "chooseTwo(img8);"/>
+		</div>
+		<div>
+			<img id = "piece9" onclick = "chooseTwo(img9);"/>
+			<img id = "piece10" onclick = "chooseTwo(img10);"/>
+			<img id = "piece11" onclick = "chooseTwo(img11);"/>
+			<img id = "piece12" onclick = "chooseTwo(img12);"/>
+		</div>
+		<div>
+			<img id = "piece13" onclick = "chooseTwo(img13);"/>
+			<img id = "piece14" onclick = "chooseTwo(img14);"/>
+			<img id = "piece15" onclick = "chooseTwo(img15);"/>
+			<img id = "piece16" onclick = "chooseTwo(img16);"/>
+		</div>
+	</body>
+</html>

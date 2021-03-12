@@ -1,0 +1,48 @@
+h1 
+{
+	font:40px Courier New;
+	color:#ab1318;
+	text-decoration:none;
+	text-align: center;
+	font-weight: bold;
+}
+h2
+{
+	font:17px Courier New;
+	text-align: center;
+	font-weight: bold;
+	color:#d4d4d4
+}
+h3
+{
+	font:17px Courier New;
+	font-weight: bold;
+	color:#FFFFFF;
+}
+body
+{
+	background-color:#3b3a3a;
+}
+div
+{
+	text-align:center;
+}
+img	
+{
+	height: 118pt;
+	width: 200pt;
+	border-style: none;
+	border-color: red;
+	border-width: 1.5px;
+}
+img:hover
+{
+	opacity:0.5;
+}
+#congragulations
+{
+	font: 35px Courier New;
+	text-align: center;
+	font-weight: bold; 
+	color: #ab1318;
+}	
